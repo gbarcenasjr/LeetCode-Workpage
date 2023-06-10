@@ -35,7 +35,6 @@ When I saw this problem at first, I knew that absolute values will be needed to 
 Approach
 Using Python's built-in sort method, I was able to sort the array numerically. Then I grabbed the first two elements of the array to calculate the difference. This difference will be our "Pass" condition for any other element in the array. The for loop will test if the difference between the current element and the next element is equal to the difference we found in the first two elements. If all elements have the same difference between numbers, the function will return True.
 
-Complexity
 Time complexity: O(n log(n))
 Python's sort method has a worst case time complexity of O(n log(n)).
 The for loop in the iterate through every element of the array once. This would result in a time complexity of O(n).

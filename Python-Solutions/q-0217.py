@@ -1,4 +1,7 @@
 """
+Contains Duplicate
+https://leetcode.com/problems/contains-duplicate/
+
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
 Example:
@@ -23,13 +26,11 @@ if __name__ == '__main__':
 """
 Intuition
 My first thought towards the problem was a the naive linear search where I would create an array of visited numbers and check if the current number in a for loop matches any number of the array. Sadly, it was too slow of an algorithm.
-
 However, I assumed if the numbers were sorted, then if there are any matches, then they would be next to each other!
 
 Approach
 After the sort() method, I used a for loop to check each number in the array "nums", minus the last element, to see if the next element matches. If any two element matches, then the function would return True. However, if none of the elements matches with each other, then the fucntion would return False.
 
-Complexity
 Time complexity: O(n logn)
 Python's built-in sort method has a time complexity of O(n logn). The for loop iterates linearly through the elements in the array which would be equivalent to O(n). So the time complexity would be O(n + n logn) or can be simplified to O(n logn)
 

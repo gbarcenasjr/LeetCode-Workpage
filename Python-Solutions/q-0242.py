@@ -10,7 +10,7 @@ Output: true
 """
 
 
-def isAnagram(self, s: str, t: str) -> bool:
+def isAnagram(s: str, t: str) -> bool:
     if len(s) != len(t):
         return False
 
@@ -30,6 +30,12 @@ def isAnagram(self, s: str, t: str) -> bool:
     if word1 != word2:
         return False
     return True
+
+if __name__ == '__main__':
+    input1 = "anagram"
+    input2 = "nagaram"
+
+    print(isAnagram(input1,input2))
 
 
 """

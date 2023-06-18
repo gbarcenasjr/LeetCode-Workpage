@@ -25,6 +25,10 @@ def majorityElement(nums: list[int]) -> int:
                 return number
         else:
             number_log[number] = 1
+
+if __name__ == '__main__':
+    example = [3, 2, 3]
+    print(majorityElement(example))
 """
 Intuition:
 My immediate thought on how to solve the problem is to keep a dictionary where I would track the number and the amount of instances. If one of those instance became greater or equal to the array length divided by 2, I would return that number.

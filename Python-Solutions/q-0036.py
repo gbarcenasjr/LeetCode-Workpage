@@ -71,11 +71,31 @@ class Solution:
             bucket_x.clear()
             bucket_y.clear()
 
-        # # Sub-box Checks
-        # for y in range(3):
-        #     for x in range(3):
+            # Sub-box Checks
+            bucket_box = collections.defaultdict(int)
+            for x in range(3):
+                for y in range(3):
+                    bucket_box[board[(3 * x) + 0][(3 * y) + 0]] += 1
+                    bucket_box[board[(3 * x) + 0][(3 * y) + 1]] += 1
+                    bucket_box[board[(3 * x) + 0][(3 * y) + 2]] += 1
 
-        return True
+                    bucket_box[board[(3 * x) + 1][(3 * y) + 0]] += 1
+                    bucket_box[board[(3 * x) + 1][(3 * y) + 1]] += 1
+                    bucket_box[board[(3 * x) + 1][(3 * y) + 2]] += 1
+
+                    bucket_box[board[(3 * x) + 2][(3 * y) + 0]] += 1
+                    bucket_box[board[(3 * x) + 2][(3 * y) + 1]] += 1
+                    bucket_box[board[(3 * x) + 2][(3 * y) + 2]] += 1
+
+                    bucket_box.pop(".")
+
+                    for value in bucket_box.values():
+                        if value > 1:
+                            return False
+
+                    bucket_box.clear()
+
+            return True
 
 
     """

@@ -72,3 +72,17 @@ if __name__ == '__main__':
     codec = Codec()
     example = ["The", "Class", "Works!", "#number1"]
     print(codec.decode(codec.encode(example)))
+
+"""
+Intuition:
+I thought about a way to transform a list of strings into a single string without losing information about where one string ends and the next begins. I came up with the idea of encoding the length of each string, followed by a delimiter, then the actual string.
+
+Approach:
+The 'encode' function concatenates the length of each string, a "#" delimiter, and the string itself. It does this for all strings in the list. The 'decode' function works in the opposite way. It scans the encoded string from the beginning, parses out the length of the next word, then extracts the word. It moves the cursor forward based on the parsed length and repeats the process until it reaches the end of the encoded string.
+
+Time complexity: O(n)
+The 'encode' function iterates over every character in the list of strings once, and the 'decode' function scans the encoded string once. Here 'n' refers to the total number of characters in the list of strings or the encoded string. So both the functions have linear time complexity.
+
+Space complexity: O(n)
+The 'encode' function creates a new string that, in the worst-case scenario, could be twice as long as the total length of all strings in the input list. The 'decode' function creates a list that, in the worst-case scenario, has as many elements as there are characters in the input string. Therefore, the space complexity for both functions can be considered as linear, as the amount of additional space used scales linearly with the size of the input.
+"""

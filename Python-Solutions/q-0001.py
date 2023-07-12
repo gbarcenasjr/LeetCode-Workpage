@@ -28,6 +28,11 @@ def twoSum(nums: list[int], target: int) -> list[int]:
                 output = [i, j]
                 return output
 
+
+if __name__ == '__main__':
+    example_2 = [3, 2, 4]
+    print(twoSum(example_2, 6))
+
 """
 Intuition
 The idea is simple: for each number in the list, we need to check if there is another number in the list that, when added to the current number, equals the target.

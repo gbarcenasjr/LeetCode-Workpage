@@ -36,12 +36,10 @@ if __name__ == '__main__':
 
 """
 Intuition:
-
 When determining the longest common prefix among a list of strings, the common prefix can't be longer than the shortest 
 string in the list. Thus, finding the length of the shortest string can provide an upper bound for the prefix's length.
 
 Approach:
-
 1. Determine the length of the shortest string in the list `strs` using a list comprehension and the `min` function, 
    and store this length in `shortest_string_len`.
 2. If `shortest_string_len` is 0 (meaning there's an empty string in the list), return an empty string as the common 
@@ -56,12 +54,10 @@ Approach:
 5. Once the loop is finished, return the `common_prefix`.
 
 Time complexity: O(n*m)
-
 Where `n` is the number of strings in `strs` and `m` is the length of the shortest string. In the worst case, we would 
 check each character of the shortest string against every other string.
 
 Space complexity: O(1)
-
 The space used by the algorithm is constant and doesn't increase with the size of the input list `strs` as the 
 `common_prefix` can be at most as long as the shortest string in the list.
 
